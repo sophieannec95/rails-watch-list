@@ -1,4 +1,16 @@
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name, label: 'Name' %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container py-5">
+  <div class="row">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+      <a class="nav-link active" aria-current="page"><%= link_to "Back to lists", lists_path %></a>
+      </li>
+    </ul>
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new list</h3>
+        <%= simple_form_for @list do |f| %>
+          <%= f.input :name, placeholder: 'Drama' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+  </div>
+</div>

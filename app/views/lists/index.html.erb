@@ -1,5 +1,22 @@
-<% @lists.each do |list| %>
-<%= link_to list.name, list_path(list)%>
-<% end %>
+<div class= "container-flex justify-content-center">
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand"><%= link_to "NEW LIST", new_list_path %> </a>
+    </div>
+  </nav>
 
-<%= link_to "Add New List", new_list_path %>
+
+ <h1>Save any kind of movies</h1>
+
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-sm-6">
+        <%= link_to list_path(list), class:"text-decoration-none" do %>
+          <div class="card-category">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
